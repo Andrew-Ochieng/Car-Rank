@@ -1,9 +1,7 @@
 <template>
     <div>
-        <Navbar />
-        <Hero />
-        <LandingContent />
-        <Footer />
+        <GeneralInfo />
+
     </div>
 </template>
 

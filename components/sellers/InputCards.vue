@@ -1,9 +1,6 @@
 <template>
     <div>
-        <Navbar />
-        <Hero />
-        <LandingContent />
-        <Footer />
+
     </div>
 </template>
 
@@ -13,6 +10,6 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>

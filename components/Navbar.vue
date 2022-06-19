@@ -1,6 +1,6 @@
 <template>
     <div>
-        <nav class="container md:px-6 px-3 md:py-3 py-4 mx-auto md:flex justify-between md:items-center">
+        <nav class="container md:px-0 px-4 md:py-3 py-4 mx-auto md:flex justify-between md:items-center">
                 <div class="flex items-between justify-between">
                     <div>
                         <a class="navbar-brand text-blue-600 font-bold md:text-4xl" href="#!">
