@@ -36,7 +36,7 @@
                                 </div>
 
                                 <div class="text-sm">
-                                <a href="#" class="font-medium text-blue-600 hover:text-blue-500"> Forgot your password? </a>
+                                    <a href="#" class="font-medium text-blue-600 hover:text-blue-500"> Forgot your password? </a>
                                 </div>
                             </div>
 
@@ -59,7 +59,7 @@
                         </div>
                     </div>
 
-                    <div class="hidden md:block w-1/2 bg-white py-10 px-10">
+                    <div class="hidden md:block w-1/2 bg-white p-4">
                         <img class="h-4/5 w-full " src="@/assets/images/car.jpg" alt="">
 
                     </div>
@@ -71,9 +71,68 @@
 </template>
 
 <script>
-    export default {
+// import { getAuth } from "firebase/auth";
+// import { getFirestore,doc,getDoc } from "@firebase/firestore";
+
+// export default {
+//   setup() {
+//     const router = useRouter();
+//     const firebaseUser = useFirebaseUser();
+//     const email = ref("");
+//     const password = ref("");
+//     const emailError = ref(null);
+//     const passwordError = ref(null);
+//     let db;
+//     let auth;
+//     onMounted(() => {
+//       auth = getAuth();
+//       db = getFirestore();
+//     });
+//     // user query
+//     const handleLogin = async () => {
+//       if (password.value && password.value >= 6 && email.value) {
+//         emailError.value = null;
+//         passwordError.value = null;
+//         // sign in
+//         const credentials = await signInUser(auth, email.value, password.value);
+//         const user = credentials.user;
+//         console.log("You have signed in", user);
+//         // fetching user info
+//         const userRedirect = ref(null);
+//         const docRef = doc(db, "users", user.uid);
+//         const docSnap = await getDoc(docRef);
+//         if (docSnap.exists()) {
+//           userRedirect.value = docSnap.data();
+//           console.log("Document data:", docSnap.data());
+//           console.log('user found',userRedirect.value)
+//           if(userRedirect.value.isAdmin){
+//           router.push("/buyer");
+//         }else{
+//           router.push('/seller')
+//         }
+//         } else {
+//           // doc.data() will be undefined in this case
+//           console.log("No such document! check your email in signin");
+//         }
         
-    }
+//         //  check user before redirecting
+        
+//       } else {
+//         emailError.value = "fill out the email";
+//         passwordError.value = "fill out the password ";
+//       }
+//     };
+//     return {
+//       email,
+//       password,
+//       emailError,
+//       passwordError,
+//       handleLogin,
+//     };
+//   },
+// };
+
+
 </script>
 
 <style lang="scss" scoped>

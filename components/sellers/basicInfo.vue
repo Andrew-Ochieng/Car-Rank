@@ -9,7 +9,7 @@
             <InputCards />
             <div class="">
                 <label class="block py-2 text-lg text-gray-900">Price:</label>
-                <input type="text" required class="px-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500" placeholder="Enter your buying price">
+                <input type="text" class="px-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500" placeholder="Enter your buying price">
             </div>
         </div>
 

@@ -3,7 +3,7 @@
         <div class="">
             <div v-for="(Car, index) in CarDetails" :key="index">
                 <label for="cars">{{ CarDetails.Description }}</label>
-                <select name="cars" id="cars">
+                <select v-model="cars" name="cars" id="cars">
                     <option value="volvo">{{ CarDetails.Cars }}</option>
                 </select> 
             </div>
