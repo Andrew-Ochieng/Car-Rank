@@ -1,16 +1,18 @@
 <template>
     <div>
-        <!-- <sidebar /> -->
-        <BuyerContent />
-        <!-- <Navbar />
+        
+        <Navbar />
+
         <Hero />
+
         <LandingContent />
-        <Footer /> -->
+        
+        <Footer />
+
     </div>
 </template>
 
-<script
->
+<script>
 
     export default {
         

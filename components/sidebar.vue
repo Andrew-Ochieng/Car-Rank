@@ -1,8 +1,8 @@
 <template>
   <div class="">
         <!-- component -->
-        <div class="flex flex-wrap bg-gray-100 w-full h-screen">
-            <div class="w-3/12 bg-white rounded p-3 shadow-lg">
+        <!-- <div class="flex flex-wrap bg-gray-100 w-full h-screen"> -->
+            <div class=" bg-white rounded p-3 shadow-lg">
                 <div class="flex flex-col justify-center items-center p-2 mb-8 text-center">
                     <h2 class="pt-4 pb-8 md:text-2xl text-xl font-medium text-gray-900 text-center">CAR PURCHASE</h2>
                     <div class="">
@@ -69,13 +69,13 @@
                 </ul>
             </div>  
 
-            <div class="w-9/12">
+            <!-- <div class="w-9/12">
                 <BuyerContent />
-                <!-- <div class="p-4 text-gray-500">
+                -- <div class="p-4 text-gray-500"> --
                     
-                </div> -->
-            </div>
-        </div>
+                </div> 
+            </div> -->
+        <!--</div> -->
     
   </div>
 </template>
