@@ -24,11 +24,11 @@
 
         <div class="container md:px-8 px-4 py-4">
             <h3>OUR CAR COLLECTIONS</h3>
-            <div v-for="car in cars">
-                <!-- <div> -->
-                    <img :src="carpic" alt="">
-                    <p>{{ cars.carname }}</p> 
-                <!-- </div> -->
+            <div>
+                <div>
+                    <img :src="pic" alt="">
+                    <p>{{ carCollection.name }}</p> 
+                </div>
             </div>
         </div>
         
@@ -36,28 +36,12 @@
 </template>
 
 <script>
+import { carCollection } from "@/assets/data.js"
+
     export default {
         data() {
             return {
-                // pic: "@/assets/car2.jpg",
-                cars: [
-                    {
-                        carpic: "@/assets/car2.jpg",
-                        carname: "Porshe"
-                    },
-                    {
-                        carpic: "@/assets/car2.jpg",
-                        carname: "Mercedes"
-                    },
-                    {
-                        carpic: "@/assets/car2.jpg",
-                        carname: "BMW"
-                    },
-                    {
-                        carpic: "@/assets/car2.jpg",
-                        carname: "Range Rover"
-                    }
-                ]
+                
             }
         },
     }

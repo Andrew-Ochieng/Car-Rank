@@ -42,51 +42,11 @@
 </template>
 
 <script>
+import { CarDetails } from "@/assets/data.js"
 
     export default {
         data() {
-            carDetails [
-                {
-                    image: "@/assets/images/car2.jpg",
-                    title: "Mercedes-Benz C-class 2015",
-                    location: "Nairobi",
-                    mileage: "7300km",
-                    carFuel: "petrol",
-                    year: "2018",
-                    price: "Ksh 1,200,000"
-
-                },
-                {
-                    image: "@/assets/images/car2.jpg",
-                    title: "Mercedes-Benz C-class 2015",
-                    location: "Nairobi",
-                    mileage: "7300km",
-                    carFuel: "petrol",
-                    year: "2018",
-                    price: "Ksh 1,200,000"
-
-                },
-                {
-                    image: "@/assets/images/car2.jpg",
-                    title: "Mercedes-Benz C-class 2015",
-                    location: "Nairobi",
-                    mileage: "7300km",
-                    carFuel: "petrol",
-                    year: "2018",
-                    price: "Ksh 1,200,000"
-
-                },
-                {
-                    image: "@/assets/images/car2.jpg",
-                    title: "Mercedes-Benz C-class 2015",
-                    location: "Nairobi",
-                    mileage: "7300km",
-                    carFuel: "petrol",
-                    year: "2018",
-                    price: "Ksh 1,200,000"
-
-                }
-            ]
+            
         }
     }
 </script>
