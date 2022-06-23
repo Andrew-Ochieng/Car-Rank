@@ -64,43 +64,7 @@
     </div>
 </template>
 
-<script>
-// import { getAuth } from "firebase/auth";
-
-// export default {
-//   setup() {
-//     const router = useRouter();
-//     const email = ref("");
-//     const password = ref("");
-//     const first_username=ref('')
-//     const emailError = ref(null);
-//     const passwordError = ref(null);
-//     const first_username_error=ref(null)
-//     const last_name_error=ref(null)
-//     let auth;
-//     onMounted(() => {
-//       auth = getAuth();
-//     });
-//     const handleRegister = async (e) => {
-//       e.preventDefault();
-//       if (password.value && email.value && password.value >= 6 && first_username.value && last_username.value) {
-//         emailError.value = null;
-//         passwordError.value = null;
-//         first_username_error.value=null;
-//         last_name_error.value=null
-//         const user = await signUpUser(auth, email.value, password.value,first_username.value,last_username.value);
-//         console.log("Signed up", user);
-//         router.push("/");
-//       } else {
-//         emailError.value = "Please enter an email";
-//         passwordError.value = "Please enter a password";
-//         first_username_error.value="Please enter first name";
-//         last_name_error.value="Please enter the last name"
-//       }
-//     };
-//     return { email, password, handleRegister, emailError, passwordError,first_username,last_username,first_username_error,last_name_error };
-//   },
-// };
+<script setup>
 
 
 </script>
