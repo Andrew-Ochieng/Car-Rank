@@ -36,7 +36,7 @@
         :class="showMenu ? 'flex' : 'hidden'"
         class="flex-col mt-8 space-y-2 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
       >
-        <li>
+        <li v-if="!firebaseUser">
           <NuxtLink
             class="inline-block px-6 py-2.5 mr-2 bg-gray-200 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:text-blue-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
             to="/Signin"
@@ -44,27 +44,27 @@
             Sign In
           </NuxtLink>
         </li>
-        <li>
-          <NuxtLink
+        <!-- <li v-if="firebaseUser">
+          <button
+
+          @click="handleSignout"
             class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-            to="/Signup"
+            
           >
-            Sign Up
-          </NuxtLink>
-        </li>
+            Sign Out
+          </button>
+        </li> -->
       </ul>
     </nav>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      showMenu: false,
-    };
-  },
-};
+<script setup>
+const showMenu =ref(false)
+const firebaseUser=useFirebaseUser()
+const handleSignout=async()=>{
+   await signOut()
+}
 </script>
 
 <style scoped></style>

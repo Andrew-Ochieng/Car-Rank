@@ -1,7 +1,7 @@
 <template>
     <div>
         
-        <Navbar />
+        
 
         <Hero />
 
@@ -12,11 +12,11 @@
     </div>
 </template>
 
-<script>
-
-    export default {
-        
-    }
+<script setup>
+definePageMeta({
+  layout: "admin",
+});
+    
 </script>
 
 <style scoped>

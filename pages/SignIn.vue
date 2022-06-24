@@ -15,8 +15,11 @@
                                     <label for="" class="text-xs font-semibold px-1">Email</label>
                                     <div class="flex">
                                         <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="text-gray-400 text-lg"></i></div>
-                                        <input type="email" required class="w-full -ml-10 px-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500" placeholder="johndoe@gmail.com">
+                                        <input 
+                                        v-model="email"
+                                        type="email" required class="w-full -ml-10 px-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500" placeholder="johndoe@gmail.com">
                                     </div>
+                                    <p v-if="emailError" class="text-red-500 text-xs italic">{{emailError}}</p>
                                 </div>
                             </div>
                             <div class="flex -mx-3">
@@ -24,8 +27,11 @@
                                     <label for="" class="text-xs font-semibold px-1">Password</label>
                                     <div class="flex">
                                         <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
-                                        <input type="password" required class="w-full -ml-10 px-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500" placeholder="************">
+                                        <input 
+                                        v-model="password"
+                                        type="password" required class="w-full -ml-10 px-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500" placeholder="************">
                                     </div>
+                                    <p v-if="passwordError" class="text-red-500 text-xs italic">{{passwordError}}</p>
                                 </div>
                             </div>
 
@@ -42,7 +48,10 @@
 
                             <div class="flex -mx-3">
                                 <div class="w-full px-3 mb-5">
-                                    <button class="w-full text-center mx-auto bg-blue-500 duration-500 hover:bg-blue-700 focus:bg-blue-700 text-white rounded-lg px-3 py-3 font-semibold">
+                                    <button 
+                                    type="button"
+                                    @click="handleLogin"
+                                    class="w-full text-center mx-auto bg-blue-500 duration-500 hover:bg-blue-700 focus:bg-blue-700 text-white rounded-lg px-3 py-3 font-semibold">
                                         SIGN IN
                                     </button>
                                 </div>
@@ -64,74 +73,32 @@
 
                     </div>
                 </div>
+  
             </div>
         </div>
 
     </div>
 </template>
 
-<script>
-// import { getAuth } from "firebase/auth";
-// import { getFirestore,doc,getDoc } from "@firebase/firestore";
+<script setup>
+const email=ref('')
+const password=ref('')
+const emailError=ref(null)
+const passwordError=ref(null)
+const router=useRouter()
 
-// export default {
-//   setup() {
-//     const router = useRouter();
-//     const firebaseUser = useFirebaseUser();
-//     const email = ref("");
-//     const password = ref("");
-//     const emailError = ref(null);
-//     const passwordError = ref(null);
-//     let db;
-//     let auth;
-//     onMounted(() => {
-//       auth = getAuth();
-//       db = getFirestore();
-//     });
-//     // user query
-//     const handleLogin = async () => {
-//       if (password.value && password.value >= 6 && email.value) {
-//         emailError.value = null;
-//         passwordError.value = null;
-//         // sign in
-//         const credentials = await signInUser(auth, email.value, password.value);
-//         const user = credentials.user;
-//         console.log("You have signed in", user);
-//         // fetching user info
-//         const userRedirect = ref(null);
-//         const docRef = doc(db, "users", user.uid);
-//         const docSnap = await getDoc(docRef);
-//         if (docSnap.exists()) {
-//           userRedirect.value = docSnap.data();
-//           console.log("Document data:", docSnap.data());
-//           console.log('user found',userRedirect.value)
-//           if(userRedirect.value.isAdmin){
-//           router.push("/buyer");
-//         }else{
-//           router.push('/seller')
-//         }
-//         } else {
-//           // doc.data() will be undefined in this case
-//           console.log("No such document! check your email in signin");
-//         }
-        
-//         //  check user before redirecting
-        
-//       } else {
-//         emailError.value = "fill out the email";
-//         passwordError.value = "fill out the password ";
-//       }
-//     };
-//     return {
-//       email,
-//       password,
-//       emailError,
-//       passwordError,
-//       handleLogin,
-//     };
-//   },
-// };
-
+const handleLogin=async(e)=>{
+e.preventDefault();
+if(email.value && password.value && password.value.length>=6){
+    passwordError.value=null
+    emailError.value=null
+    await signIn(email.value,password.value)
+    router.push('/seller')
+}else{
+    passwordError.value='Enter password'
+    emailError.value="enter an email"
+}
+}
 
 </script>
 

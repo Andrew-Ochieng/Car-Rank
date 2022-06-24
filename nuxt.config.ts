@@ -20,6 +20,11 @@ export default defineNuxtConfig({
     APP_ID:process.env.APP_ID,
     }
   },
+  head:{
+    link:[
+      { rel: 'stylesheet', href: 'https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css' },
+    ]
+  },
     css: [
       "@/assets/css/main.css"
     ],
