@@ -31,7 +31,7 @@
         </div>
       </div>
       <div>
-      <div
+      <nuxt-link to="/sell"
           class="block p-6 w-72 bg-cyan-700 rounded-lg border border-cyan-200 shadow-md hover:bg-cyan-800 items-center"
         >
           <h5
@@ -42,7 +42,7 @@
           <p class="font-normal text-gray-50 text-center">
            Car
           </p>
-        </div>
+        </nuxt-link>
       </div>
     </div>
     <!-- !card card displays -->

@@ -1,7 +1,7 @@
 <template>
     <div>
         
-        
+        <Navbar1/>
 
         <Hero />
 
@@ -13,9 +13,8 @@
 </template>
 
 <script setup>
-definePageMeta({
-  layout: "admin",
-});
+import Navbar1 from '~~/components/navbar.vue';
+
     
 </script>
 

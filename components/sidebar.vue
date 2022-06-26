@@ -161,8 +161,10 @@
 
 <script setup>
 const firebaseUser = useFirebaseUser();
+const router=useRouter()
 const handleSignout = async () => {
   await signOut();
+  router.push('/')
 };
 </script>
 

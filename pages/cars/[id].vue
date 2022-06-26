@@ -54,8 +54,8 @@
 
       <div class="w-72 bg-gray-50 ml-5">
         <div class="p-6 bg-white  border border-gray-200 shadow-md">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-            General Information
+          <h5 class="mb-2 text-xl tracking-tight text-gray-700">
+            Car Ratings
           </h5>
 
           <div class="flex items-center justify-between">
