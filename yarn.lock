@@ -4951,6 +4951,11 @@ tar@^6.1.11:
     mkdirp "^1.0.3"
     yallist "^4.0.0"
 
+tb-skeleton@^0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/tb-skeleton/-/tb-skeleton-0.3.6.tgz#51ef0a47da9f7751b997003d3ed5691287035d31"
+  integrity sha512-mK47E7II/dMdwt1n7XtAqYO6Y2B6f7ttNVvsNuSSjE+obTQDjNoJxIINpzAHB08WW8EK4IXcmr0Mq5HvXFrfSQ==
+
 terser@^5.0.0:
   version "5.14.1"
   resolved "https://registry.yarnpkg.com/terser/-/terser-5.14.1.tgz#7c95eec36436cb11cf1902cc79ac564741d19eca"
@@ -5254,6 +5259,11 @@ vue-router@^4.0.16:
   integrity sha512-JcO7cb8QJLBWE+DfxGUL3xUDOae/8nhM1KVdnudadTAORbuxIC/xAydC5Zr/VLHUDQi1ppuTF5/rjBGzgzrJNA==
   dependencies:
     "@vue/devtools-api" "^6.0.0"
+
+vue-skeletor@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/vue-skeletor/-/vue-skeletor-1.0.6.tgz#ec218ee84335cf5cc069ed0c966de2a7e9cbe704"
+  integrity sha512-ER4vHlFSXCW3ixK2DlczUE6CZliHsn4d2TvZ9/26C6Oq8zoyEY23BsqweMPtF8QULSz1+G5m2New1BwKNVOZhQ==
 
 vue-typer@^1.2.0:
   version "1.2.0"

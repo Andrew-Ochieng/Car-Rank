@@ -55,8 +55,8 @@
           </a>
         </li>
         <li>
-          <a
-            href="#"
+          <nuxt-link to="/accounts"
+            
             class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
           >
             <span class="text-gray-600">
@@ -76,7 +76,7 @@
               </svg>
             </span>
             <span>My profile</span>
-          </a>
+          </nuxt-link>
         </li>
         <li>
           <a
@@ -160,8 +160,10 @@
 </template>
 
 <script setup>
+
 const firebaseUser = useFirebaseUser();
 const router=useRouter()
+
 const handleSignout = async () => {
   await signOut();
   router.push('/')

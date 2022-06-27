@@ -75,7 +75,7 @@
                         class="w-full -ml-10 px-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500 bg-gray-50 text-gray-500"
                       >
                         <option disabled value="">
-                          Select manufacture year
+                          Select manufacture location
                         </option>
                         <option
                           v-for="locale in locations"
@@ -125,6 +125,47 @@
                         required
                         class="w-full -ml-10 px-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500"
                         placeholder="e.g 25000"
+                      />
+                    </div>
+                    <p class="text-red-500 text-xs italic"></p>
+                  </div>
+                </div>
+
+                <div class="flex -mx-3">
+                  <div class="w-full px-3 mb-5">
+                    <label for="" class="text-sm text-gray-600 px-1"
+                      >Name:</label
+                    >
+                    <div class="flex">
+                      <div
+                        class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
+                      ></div>
+                      <input
+                        v-model="car_owner"
+                        type="text"
+                        required
+                        class="w-full -ml-10 px-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500"
+                        placeholder="e.g Brian"
+                      />
+                    </div>
+                    <p class="text-red-500 text-xs italic"></p>
+                  </div>
+                </div>
+                <div class="flex -mx-3">
+                  <div class="w-full px-3 mb-5">
+                    <label for="" class="text-sm text-gray-600 px-1"
+                      >Phone:</label
+                    >
+                    <div class="flex">
+                      <div
+                        class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
+                      ></div>
+                      <input
+                        v-model="car_contact"
+                        type="text"
+                        required
+                        class="w-full -ml-10 px-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500"
+                        placeholder="e.g 0712345678"
                       />
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
@@ -375,6 +416,32 @@
                   </div>
                 </div>
                 <!-- !accessories -->
+                 <!-- !accessoriies -->
+                <div class="flex -mx-3">
+                  <div class="w-full px-3 flex">
+                    <div class="pr-2">
+                      <label for="" class="text-sm text-gray-600 px-1"
+                        >Suspension:</label
+                      >
+                    </div>
+                    <div class="flex w-full">
+                      <div
+                        class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
+                      ></div>
+                      <input
+                        v-model="car_suspension"
+                        type="range"
+                        required
+                        class="w-full -ml-10 px-4 py-2 rounded-lg accent-blue-600 border-2 border-gray-200 outline-none focus:border-blue-500"
+                        min="0"
+                        max="6"
+                        step="0.5"
+                      />
+                    </div>
+                    <p class="text-red-500 text-xs italic"></p>
+                  </div>
+                </div>
+                <!-- !accessories -->
                 <!-- !interior -->
                 <div class="flex -mx-3">
                   <div class="w-full px-3 flex">
@@ -440,6 +507,7 @@ const onfileChange=async(e)=>{
    const {snapshot,downloadUrl,metadata} = await uploadFile(files[0]);
    emits("fileChange",snapshot,downloadUrl,metadata);
    console.log('download url from sell',downloadUrl)
+   fileUpload.value=downloadUrl
 
 }
 
@@ -458,15 +526,37 @@ const car_body = ref(0);
 const car_electric = ref(0);
 const car_accessories = ref(0);
 const car_interior = ref(0);
+const car_suspension=ref(0);
+const final_price=ref(0)
+const car_owner=ref('')
+const car_contact=ref('')
 
-
+const total_rate=ref(0.0)
+const firebaseUser=useFirebaseUser()
+const router=useRouter()
 const handleSubmit = async () => {
+
   
-  
-  // await storeFile(fileUpload.value.files)
+  if(car_model.value && car_year.value && car_location.value && car_price.value && car_engine.value && car_milage.value && car_transmission.value && car_fuel.value && car_steering.value && car_tyre.value && car_body.value && car_electric.value && car_accessories.value && car_interior.value && car_suspension.value){
+    
+    total_rate.value=(parseFloat(car_engine.value)+parseFloat(car_milage.value)+ parseFloat(car_transmission.value) + parseFloat(car_fuel.value) + parseFloat(car_steering.value) + parseFloat(car_tyre.value) + parseFloat(car_body.value) + parseFloat(car_electric.value) + parseFloat(car_accessories.value) + parseFloat(car_interior.value))
+    console.log(total_rate.value)
+    final_price.value=(total_rate.value/50)*car_price.value
+    console.log('final price is ',final_price.value)
+    console.log('suspension',car_suspension.value)
+
+    await addCar(firebaseUser.value.uid,car_model.value,car_year.value,car_location.value,car_price.value,car_engine.value,car_milage.value,car_transmission.value,car_fuel.value,car_steering.value,car_tyre.value,car_body.value,car_electric.value,car_accessories.value,car_interior.value,fileUpload.value,car_suspension.value,car_owner.value,car_contact.value);
+    router.push('/seller')
+    console.log('url inside the submit',fileUpload.value)
   console.log(
-    `${car_model.value} ${car_year.value} ${car_location.value} ${car_price.value} ${car_engine.value} ${car_milage.value} ${car_transmission.value} ${car_fuel.value} `
+    `${car_model.value} ${car_year.value} ${car_location.value} ${car_price.value} ${car_engine.value} ${car_milage.value} ${car_transmission.value} ${car_fuel.value} ${car_steering.value} ${car_tyre.value} ${car_body.value} ${car_electric.value} ${car_accessories.value} ${car_interior.value}`
   );
+  }else{
+    console.log('dont leave any field empty')
+  }
+  
+
+  
 };
 const showNext = ref(false);
 const handleNext = () => {

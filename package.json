@@ -15,6 +15,8 @@
   },
   "dependencies": {
     "firebase": "^9.8.3",
+    "tb-skeleton": "^0.3.6",
+    "vue-skeletor": "^1.0.6",
     "vue-typer": "^1.2.0",
     "vue-writer": "^1.2.0"
   }
