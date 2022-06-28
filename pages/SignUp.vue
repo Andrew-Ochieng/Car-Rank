@@ -78,12 +78,15 @@
 
 <script setup>
 import {getAuth} from 'firebase/auth'
+
+
 const email=ref('')
 const password=ref('')
 const username=ref('')
 const passwordError=ref(null)
 const emailError=ref(null)
 const usernameError=ref(null)
+const router=useRouter();
 
 const handleRegister=async()=>{
     if(email.value && password.value && password.value.length>=6 && username.value){
@@ -91,6 +94,8 @@ const handleRegister=async()=>{
         emailError.value=null
         usernameError.value=null
        await signUp(auth,email.value,password.value,username.value)
+
+       router.push('/buyer')
        
     }else{
         passwordError.value="Please enter the password of 6 characters"

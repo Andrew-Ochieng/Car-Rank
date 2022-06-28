@@ -23,13 +23,13 @@ export const signUp =async(auth,email,password,name)=>{
 
 export const signIn=async(email,password)=>{
     const auth = getAuth();
-   const user= signInWithEmailAndPassword(auth, email, password)
+   const credentials= signInWithEmailAndPassword(auth, email, password)
      
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
       });
-      return user
+      return credentials
 }
 
 export const initUser=async()=>{

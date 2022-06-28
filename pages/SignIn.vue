@@ -81,19 +81,42 @@
 </template>
 
 <script setup>
+import { doc, getDoc,getFirestore } from "firebase/firestore";
 const email=ref('')
 const password=ref('')
 const emailError=ref(null)
 const passwordError=ref(null)
 const router=useRouter()
 
+let db;
+onMounted(()=>{
+    db=getFirestore()
+})
+
 const handleLogin=async(e)=>{
 e.preventDefault();
 if(email.value && password.value && password.value.length>=6){
     passwordError.value=null
     emailError.value=null
-    await signIn(email.value,password.value)
-    router.push('/seller')
+   const credentials= await signIn(email.value,password.value)
+   const user=credentials.user;
+//    console.log('signed in ',user)
+    
+       const userRedirect=ref(null)
+       const userRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(userRef);
+       if(docSnap.exists()){
+         userRedirect.value=docSnap.data();
+        if(userRedirect.value.admin){
+            router.push('/seller')
+        }else{
+            router.push('/buyer')
+        }
+       }
+
+       
+
+
 }else{
     passwordError.value='Enter password'
     emailError.value="enter an email"

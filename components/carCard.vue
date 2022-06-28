@@ -9,11 +9,11 @@
             <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 ">Mercedes-Benz C-class 2015</h5>
         </a>
         <p class="mb-3 font-normal text-gray-700 "><i class="las la-map-marker"></i> {{car.car_location}}</p>
-        <p class="mb-3 font-normal text-gray-700 "><i class="las la-map-marker"></i> 7300km|Petrol|2WD</p>
+        <p class="mb-3 font-normal text-gray-700 "><i class="las la-map-marker"></i> {{car.car_contact}}</p>
         <ul class="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700"></ul>
 
         <div class="flex items-center justify-center">
-        <p class="mb-3 font-normal text-gray-700 text-2xl">Ksh.3,200,000</p>
+        <p class="mb-3 font-normal text-gray-700 text-2xl">Ksh. {{car.car_price}}</p>
         </div>
     </div>
 </div>
