@@ -117,6 +117,7 @@ export const carCollection = [
     {
         id: "2",
         pic: "@/assets/images/car2.jpg",
+        
         name: "Mercedes"
     },
     {
