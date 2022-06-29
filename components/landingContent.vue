@@ -26,7 +26,7 @@
             <h3>OUR CAR COLLECTIONS</h3>
             <div>
                 <div>
-                    <img src="@/assets/images/car2.jpg" alt="">
+                    <img :src="pic" alt="">
                     <p>{{ carCollection.name }}</p> 
                 </div>
             </div>
@@ -35,10 +35,16 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import { carCollection } from "@/assets/data.js"
 
-    
+    export default {
+        data() {
+            return {
+                
+            }
+        },
+    }
 </script>
 
 <style scoped>
