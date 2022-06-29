@@ -1,7 +1,7 @@
 <template>
     <div>
         
-        <Navbar />
+        <Navbar1/>
 
         <Hero />
 
@@ -12,11 +12,10 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import Navbar1 from '~~/components/navbar.vue';
 
-    export default {
-        
-    }
+    
 </script>
 
 <style scoped>
