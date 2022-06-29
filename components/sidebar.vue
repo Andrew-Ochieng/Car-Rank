@@ -1,5 +1,6 @@
 <template>
   <div class="">
+    <client-only>
     <div class="bg-white p-3 shadow-lg h-screen">
       <div
         class="flex flex-col justify-center items-center p-2 mb-8 text-center"
@@ -12,7 +13,7 @@
         <div class="">
           <img
             class="h-16 bg-gray-100 rounded-full"
-            src="@/assets/images/man.png"
+            src="https://as1.ftcdn.net/v2/jpg/01/39/69/88/1000_F_139698895_YqcszLvAoImKvuIpXUrbBiaANXXO3pXS.jpg"
             alt="John Doe"
           />
         </div>
@@ -52,6 +53,7 @@
               </svg>
             </span>
             <span>Dashboard</span>
+            <span>user</span>
           </a>
         </li>
         <li>
@@ -154,6 +156,7 @@
         </li>
       </ul>
     </div>
+    </client-only>
 
    
   </div>
@@ -161,8 +164,10 @@
 
 <script setup>
 
+
 const firebaseUser = useFirebaseUser();
 const router=useRouter()
+
 
 const handleSignout = async () => {
   await signOut();

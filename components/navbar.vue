@@ -5,9 +5,9 @@
     >
       <div class="flex items-between justify-between">
         <div>
-          <a class="navbar-brand text-blue-600 font-bold md:text-4xl" href="#!">
+          <nuxt-link to="/" class="navbar-brand text-blue-600 font-bold md:text-4xl">
             Vehicle Value Teller
-          </a>
+          </nuxt-link>
         </div>
 
         <!-- Mobile menu button -->

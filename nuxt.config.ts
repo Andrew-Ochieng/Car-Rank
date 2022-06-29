@@ -2,6 +2,10 @@ import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  ssr:false,
+  buildModules: [
+    '@pinia/nuxt',
+  ],
   runtimeConfig: {
     // The private keys which are only available within server-side
     API_KEY: process.env.API_KEY,

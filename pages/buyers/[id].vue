@@ -173,7 +173,7 @@ accessory.value=car.value.car_accessories*2
    
 
 definePageMeta({
-  layout: "admin",
+  layout: "normal",
 });
 </script>
 

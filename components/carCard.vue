@@ -6,7 +6,7 @@
       <div class="p-5">
         <a href="#">
           <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
-            Mercedes-Benz C-class 2015
+            {{car.car_model}}
           </h5>
         </a>
         <p class="mb-3 font-normal text-gray-700">
