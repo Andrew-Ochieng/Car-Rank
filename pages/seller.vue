@@ -1,5 +1,14 @@
 <template>
   <div>
+  <!-- !search bar -->
+   <div class="flex justify-center items-center p-4">
+      <input
+        v-model="search"
+        type="text"
+        placeholder="search in projects"
+        class="border border-gray-300 rounded-lg block w-full p-2.5 text-gray-900"
+      />
+    </div>
     <!-- !the top display cards -->
     <div class="flex items-center justify-between mt-5 p-4 w-full">
       <div>
@@ -57,7 +66,7 @@
     <!-- !card card displays -->
 
     <div class="grid grid-cols-3 gap-8" v-if="showAll">
-      <div v-for="car in cars" :key="car.id">
+      <div v-for="car in searchedCars" :key="car.id">
         <nuxt-link :to="{ name: 'cars-id', params: { id: car.id } }">
           <CarCard1 :car="car" />
         </nuxt-link>
@@ -85,6 +94,12 @@ const cars = ref([]);
 const user=ref(null);
 
 const showAll=ref(true);
+const search = ref("");
+ const searchedCars = computed(() => {
+      return cars.value.filter((car) =>
+        car.car_model.match(search.value)
+      );
+    });
 
 const handleRecommended=()=>{
   showAll.value=!showAll.value
