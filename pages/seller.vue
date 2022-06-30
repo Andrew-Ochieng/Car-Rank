@@ -29,14 +29,15 @@
         </div>
         <!-- !normal -->
         <div v-else
-          class="block p-6 w-72 bg-green-700 rounded-lg border border-green-200 shadow-md hover:bg-green-800 items-center"
+        @click="handleRecommended"
+          class="block p-6 w-72 bg-green-700 rounded-lg cursor-pointer border border-green-200 shadow-md hover:bg-green-800 items-center"
         >
           <h5
             class="mb-2 text-2xl font-bold tracking-tight text-gray-50 text-center"
           >
             Recommended
           </h5>
-          <p class="font-normal text-gray-50 text-center">12</p>
+          <p class="font-normal text-gray-50 text-center">{{recommendeCars.length}}</p>
         </div>
       </div>
       <div>
@@ -55,8 +56,15 @@
     </div>
     <!-- !card card displays -->
 
-    <div class="grid grid-cols-3 gap-8">
+    <div class="grid grid-cols-3 gap-8" v-if="showAll">
       <div v-for="car in cars" :key="car.id">
+        <nuxt-link :to="{ name: 'cars-id', params: { id: car.id } }">
+          <CarCard1 :car="car" />
+        </nuxt-link>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-8" v-if="!showAll">
+      <div v-for="car in recommendeCars" :key="car.id">
         <nuxt-link :to="{ name: 'cars-id', params: { id: car.id } }">
           <CarCard1 :car="car" />
         </nuxt-link>
@@ -75,6 +83,17 @@ definePageMeta({
 const firebaseUser= useFirebaseUser()
 const cars = ref([]);
 const user=ref(null);
+
+const showAll=ref(true);
+
+const handleRecommended=()=>{
+  showAll.value=!showAll.value
+}
+
+const recommendeCars=computed(()=>{
+  return cars.value.filter((car)=>car.car_engine >= 5)
+})
+
 onMounted(async () => {
   const db = getFirestore();
   const querySnapshot = await getDocs(collection(db, "cars"));
