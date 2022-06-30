@@ -33,7 +33,7 @@
       <div>
       <h3 class="p-4 text-lg text-gray-800">OUR CAR COLLECTIONS</h3>
       <div>
-        <div class="grid grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-3 gap-8 sm:grid-cols-1">
           <div v-for="car in cars" :key="car.id">
             <div
               class="w-80 bg-white rounded-lg border border-gray-200 shadow-md"
