@@ -14,8 +14,21 @@
           <p class="font-normal text-gray-50 text-center">20</p>
         </div>
       </div>
-      <div>
-        <div
+      <div v-if="user">
+        <div v-if="user.superAdmin">
+        <nuxt-link to="/users"
+          class=" cursor-pointer block p-6 w-72 bg-green-700 rounded-lg border border-green-200 shadow-md hover:bg-green-800 items-center"
+        >
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-gray-50 text-center"
+          >
+            View
+          </h5>
+          <p class="font-normal text-gray-50 text-center">Users</p>
+        </nuxt-link>
+        </div>
+        <!-- !normal -->
+        <div v-else
           class="block p-6 w-72 bg-green-700 rounded-lg border border-green-200 shadow-md hover:bg-green-800 items-center"
         >
           <h5
@@ -54,12 +67,14 @@
 
 <script setup>
 import CarCard1 from "../components/carCard.vue";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs, getFirestore, doc, getDoc } from "firebase/firestore";
 
 definePageMeta({
   layout: "admin",
 });
+const firebaseUser= useFirebaseUser()
 const cars = ref([]);
+const user=ref(null);
 onMounted(async () => {
   const db = getFirestore();
   const querySnapshot = await getDocs(collection(db, "cars"));
@@ -67,6 +82,18 @@ onMounted(async () => {
     cars.value.push({...doc.data(), id:doc.id})
     console.log(`${doc.id} => ${doc.data()}`);
   });
+  // find the signed in user
+  const userRef=doc(db, "users", firebaseUser.value.uid);
+  const userSnap= await getDoc(userRef);
+  if (userSnap.exists()) {
+    user.value=userSnap.data();
+  console.log("User data in seller:", userSnap.data());
+} else {
+  // doc.data() will be undefined in this case
+  console.log("No such document!");
+}
+
+
 });
 </script>
 

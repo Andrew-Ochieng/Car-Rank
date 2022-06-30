@@ -9,7 +9,8 @@ export const signUp =async(auth,email,password,name)=>{
     await setDoc(doc(db, "users", credentials.user.uid), {
         name: name,
         admin: false,
-        email: email
+        email: email,
+        superAdmin: false
       })
       
       .catch((error) => {
