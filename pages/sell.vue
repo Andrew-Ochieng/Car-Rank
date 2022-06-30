@@ -75,7 +75,7 @@
                         class="w-full -ml-10 px-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500 bg-gray-50 text-gray-500"
                       >
                         <option disabled value="">
-                          Select manufacture location
+                          Select  location
                         </option>
                         <option
                           v-for="locale in locations"
@@ -252,7 +252,7 @@
                         required
                         class="w-full -ml-10 px-4 py-2 accent-blue-600 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500"
                         min="0"
-                        max="6"
+                        max="5"
                         step="0.5"
                       />
                     </div>
@@ -382,7 +382,7 @@
                         required
                         class="w-full -ml-10 px-4 py-2 accent-blue-600 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500"
                         min="0"
-                        max="6"
+                        max="5"
                         step="0.5"
                       />
                     </div>
@@ -434,7 +434,7 @@
                         required
                         class="w-full -ml-10 px-4 py-2 rounded-lg accent-blue-600 border-2 border-gray-200 outline-none focus:border-blue-500"
                         min="0"
-                        max="6"
+                        max="5"
                         step="0.5"
                       />
                     </div>
@@ -537,7 +537,7 @@ const router=useRouter()
 const handleSubmit = async () => {
 
   
-  if(car_model.value && car_year.value && car_location.value && car_price.value && car_engine.value && car_milage.value && car_transmission.value && car_fuel.value && car_steering.value && car_tyre.value && car_body.value && car_electric.value && car_accessories.value && car_interior.value && car_suspension.value){
+  if(car_model.value && car_year.value && car_location.value && car_price.value && car_engine.value && car_milage.value && car_transmission.value && car_fuel.value && car_steering.value && car_tyre.value && car_body.value && car_electric.value && car_accessories.value && car_interior.value &&fileUpload.value && car_suspension.value){
     
     total_rate.value=(parseFloat(car_engine.value)+parseFloat(car_milage.value)+ parseFloat(car_transmission.value) + parseFloat(car_fuel.value) + parseFloat(car_steering.value) + parseFloat(car_tyre.value) + parseFloat(car_body.value) + parseFloat(car_electric.value) + parseFloat(car_accessories.value) + parseFloat(car_interior.value))
     console.log(total_rate.value)

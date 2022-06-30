@@ -11,7 +11,7 @@
           >
             Popular
           </h5>
-          <p class="font-normal text-gray-50 text-center">20</p>
+          <p class="font-normal text-gray-50 text-center">{{cars.length}}</p>
         </div>
       </div>
       <div v-if="user">

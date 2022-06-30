@@ -21,19 +21,19 @@
           <h4
             class="font-semibold md:text-2xl text-lg pt-2 text-gray-700 capitalize font-poppins tracking-wide"
           >
-            John Doe
+            The Best
           </h4>
           <span
-            class="text-sm text-gray-500 tracking-wide flex items-center py-2"
+            class="text-sm text-gray-500 tracking-wide flex items-center justify-center py-2"
           >
-            +2547 0123 4567
+            Used cars
           </span>
         </div>
       </div>
       <ul class="space-y-4 text-sm">
         <li>
-          <a
-            href="#"
+          <nuxt-link
+            to="/seller"
             class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 bg-gray-200 focus:shadow-outline"
           >
             <span class="text-gray-600">
@@ -52,9 +52,9 @@
                 />
               </svg>
             </span>
-            <span>Dashboard</span>
-            <span>user</span>
-          </a>
+            <span>Home</span>
+            
+          </nuxt-link>
         </li>
         <li>
           <nuxt-link to="/accounts"
@@ -80,54 +80,7 @@
             <span>My profile</span>
           </nuxt-link>
         </li>
-        <li>
-          <a
-            href="#"
-            class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
-          >
-            <span class="text-gray-600">
-              <svg
-                class="h-5"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                ></path>
-              </svg>
-            </span>
-            <span>Notifications</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
-          >
-            <span class="text-gray-600">
-              <svg
-                class="h-5"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                />
-              </svg>
-            </span>
-            <span>Change password</span>
-          </a>
-        </li>
+       
         <li>
           <button
           v-if="firebaseUser"
