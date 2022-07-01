@@ -31,8 +31,8 @@
                         class="w-full -ml-10 px-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500 bg-gray-50 text-gray-500"
                       >
                         <option disabled value="">Select car model</option>
-                        <option v-for="car in models" :key="car" :value="car">
-                          {{ car }}
+                        <option v-for="car in models" :key="car.id" :value="car.model_name">
+                          {{ car.model_name }}
                         </option>
                       </select>
                     </div>
@@ -495,6 +495,7 @@
 </template>
 
 <script setup>
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 definePageMeta({
   layout: "admin",
 });
@@ -587,18 +588,15 @@ const years = ref([
   "2011",
   "2010",
 ]);
-const models = ref([
-  "Toyota Fielder",
-  "Mazda Demio",
-  "Toyota Noah",
-  "Toyota Axio",
-  "Toyota Prado",
-  "Subaru Forester",
-  "Honda Fit",
-  "Nissan X-Trail",
-  "Subaru Exiga",
-  "Toyota Wish",
-]);
+const models = ref([]);
+onMounted(async()=>{
+  const db=getFirestore();
+  const querySnapshot = await getDocs(collection(db, "models"));
+querySnapshot.forEach((doc) => {
+  models.value.push({...doc.data(),id:doc.id})
+  console.log(`${doc.id} => ${doc.data()}`);
+});
+})
 </script>
 
 <style lang="scss" scoped></style>

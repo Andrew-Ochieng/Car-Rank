@@ -109,6 +109,8 @@ if(email.value && password.value && password.value.length>=6){
          userRedirect.value=docSnap.data();
         if(userRedirect.value.admin){
             router.push('/seller')
+        }else if(userRedirect.value.superAdmin){
+            router.push('/supa')
         }else{
             router.push('/buyer')
         }
