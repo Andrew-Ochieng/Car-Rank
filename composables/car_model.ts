@@ -12,3 +12,14 @@ export const newModel=async(model_name)=>{
       }
       
 }
+export const newLocation=async(location_name)=>{
+    const db=getFirestore();
+    try {
+        const docRef = await addDoc(collection(db, "locations"), {
+            location_name:location_name
+        });
+       
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+}

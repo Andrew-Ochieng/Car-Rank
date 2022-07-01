@@ -80,9 +80,9 @@
                         <option
                           v-for="locale in locations"
                           :key="locale"
-                          :value="locale"
+                          :value="locale.location_name"
                         >
-                          {{ locale }}
+                          {{ locale.location_name }}
                         </option>
                       </select>
                     </div>
@@ -205,6 +205,7 @@
                         max="10"
                         step="1"
                       />
+                      <p class="text-gray-500 text-sm ">{{car_engine}}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -230,6 +231,7 @@
                         max="3"
                         step="0.25"
                       />
+                      <p class="text-gray-500 text-sm ">{{car_milage}}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -255,6 +257,7 @@
                         max="5"
                         step="0.5"
                       />
+                      <p class="text-gray-500 text-sm ">{{car_body}}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -281,6 +284,7 @@
                         max="3"
                         step="0.25"
                       />
+                      <p class="text-gray-500 text-sm ">{{car_tyre}}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -307,6 +311,7 @@
                         max="5"
                         step="0.5"
                       />
+                      <p class="text-gray-500 text-sm ">{{car_steering}}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -333,6 +338,7 @@
                         max="3"
                         step="0.25"
                       />
+                      <p class="text-gray-500 text-sm ">{{car_fuel}}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -359,6 +365,7 @@
                         max="5"
                         step="0.5"
                       />
+                      <p class="text-gray-500 text-sm ">{{car_transmission}}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -385,6 +392,7 @@
                         max="5"
                         step="0.5"
                       />
+                      <p class="text-gray-500 text-sm ">{{car_electric}}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -411,6 +419,7 @@
                         max="3"
                         step="0.25"
                       />
+                      <p class="text-gray-500 text-sm ">{{car_accessories}}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -437,8 +446,9 @@
                         max="5"
                         step="0.5"
                       />
+                      <p class="text-gray-500 text-sm">{{car_suspension}}</p>
                     </div>
-                    <p class="text-red-500 text-xs italic"></p>
+                    <p class="text-red-500 text-sm italic"></p>
                   </div>
                 </div>
                 <!-- !accessories -->
@@ -463,6 +473,7 @@
                         max="3"
                         step="0.25"
                       />
+                      <p class="text-gray-500 text-sm">{{car_interior}}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -495,7 +506,7 @@
 </template>
 
 <script setup>
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+  import { collection, getDocs, getFirestore } from "firebase/firestore";
 definePageMeta({
   layout: "admin",
 });
@@ -564,17 +575,7 @@ const handleNext = () => {
   showNext.value = !showNext.value;
 };
 
-const locations = ref([
-  "Nairobi",
-  "Eldoret",
-  "Garissa",
-  "Nakuru",
-  "Mombasa",
-  "Meru",
-  "Kisumu",
-  "Kakamega",
-  "Bungoma",
-]);
+const locations = ref([]);
 const years = ref([
   "2020",
   "2019",
@@ -594,6 +595,12 @@ onMounted(async()=>{
   const querySnapshot = await getDocs(collection(db, "models"));
 querySnapshot.forEach((doc) => {
   models.value.push({...doc.data(),id:doc.id})
+  console.log(`${doc.id} => ${doc.data()}`);
+});
+// find location
+const locationSnapshot = await getDocs(collection(db, "locations"));
+locationSnapshot.forEach((doc) => {
+  locations.value.push({...doc.data(),id:doc.id})
   console.log(`${doc.id} => ${doc.data()}`);
 });
 })
