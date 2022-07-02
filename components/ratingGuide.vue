@@ -41,383 +41,45 @@
                                 </tr>
                             </thead>
                             <tbody class="bg-white">
-                                <tr class="whitespace-nowrap">
+                                <tr v-for="rates in rates" class="whitespace-nowrap">
                                     <td class="p-2 text-sm text-gray-500">
-                                        Noises
+                                        {{rates.engine}}
                                     </td>
                                     <td class="p-2">
                                         <div class="text-sm text-gray-500">
-                                            Bonnet
+                                            {{rates.body}}
                                         </div>
                                     </td>
                                     <td class="p-2">
-                                        <div class="text-sm text-gray-500">150,000KM</div>
+                                        <div class="text-sm text-gray-500">
+                                            {{rates.mileage}}
+                                        </div>
                                     </td>
                                     <td class="p-2 text-sm text-gray-500">
-                                        Rotation
+                                        {{rates.tires}}
                                     </td>
                                     <td class="p-2 text-sm text-gray-500">
-                                        Power Steering Fluid Level
+                                        {{rates.steering}}
                                     </td>
                                     <td class="p-2">
                                         <div class="text-sm text-gray-500">
-                                            Fog Lights
+                                            {{rates.electrical}}
                                         </div>
                                     </td>
                                     <td class="p-2">
-                                        <div class="text-sm text-gray-500">Electrical Power</div>
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Shocks
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Roof Rear
-                                    </td>
-                                    <td class="p-2">
                                         <div class="text-sm text-gray-500">
-                                            Noises
+                                            {{rates.fuelType}}
                                         </div>
                                     </td>
-                                </tr>
-                                <tr class="whitespace-nowrap">
                                     <td class="p-2 text-sm text-gray-500">
-                                        Leaks
+                                        {{rates.suspension}}
+                                    </td>
+                                    <td class="p-2 text-sm text-gray-500">
+                                        {{rates.interior}}
                                     </td>
                                     <td class="p-2">
                                         <div class="text-sm text-gray-500">
-                                            Front/ Rear Bumper
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">150,000KM-100,000KM</div>
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Balance
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Shaft
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Indicators lights
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">Petrol</div>
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Sway Bar
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Rear View Mirror
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Leaks
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="whitespace-nowrap">
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Corrosion
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Fenders
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">99,999KM-50,000KM</div>
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Wear
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Leaks
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Hazard Lights
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">Diesel</div>
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Looseness
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Visors
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Transmission <br> Housing
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="whitespace-nowrap">
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Belts
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Right/ Left Front door
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">49,999KM-1KM</div>
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Alignment
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Noises
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Parking Lights
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500"></div>
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Cracks
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Head Rests
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Transfer Box
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="whitespace-nowrap">
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Hoses
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Left/ Right Rear Door
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Play
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Reverse Lights
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500"></div>
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Wear
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Seats
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Propellor <br> shaft
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="whitespace-nowrap">
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Efficiency
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Cowl Panel
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Wear
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Headlamps
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500"></div>
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Ball Joints
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Door Handles
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Differential
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="whitespace-nowrap">
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Exhaust Gas Quality
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Front/ Rear Wind Shield
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Dashboard
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500"></div>
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Noise
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Air Vents
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Axels
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="whitespace-nowrap">
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Overhauled
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Mirrors
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Interior lights
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500"></div>
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Play
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Dashboards
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Pressure Plate
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="whitespace-nowrap">
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Gear Power
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Trunk
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Starter
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500"></div>
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Floor Carpet
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Electronic <br> controlled clutch
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="whitespace-nowrap">
-                                    <td class="p-2 text-sm text-gray-500">
-                                        Engine Knock
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Paint
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Battery
-                                        </div>
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500"></div>
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        
-                                    </td>
-                                    <td class="p-2 text-sm text-gray-500">
-                                        
-                                    </td>
-                                    <td class="p-2">
-                                        <div class="text-sm text-gray-500">
-                                            Transaxle
+                                            {{rates.transmission    }}
                                         </div>
                                     </td>
                                 </tr>
@@ -436,20 +98,32 @@
     export default {
         data() {
             return {
-                rates: {
-                    engine: ['noises', 'leaks', 'corrosion', 'belts', 'hoses', 'operation', 'efficiency', 'exhaust gas quality', 'engine knock', 'power produced by each gear'],
-                    mileages: [],
-                    body: [],
-                    tires: [],
-                    accessories: [],
-                    transmission: [],
-                    electricCondition: [],
-                    fuelType: [],
-                    suspension: [],
-                    interior: [],
+                // columns: [
+                //     {col: 'Engine Condition'}, 
+                //     {col1: 'Body'}, 
+                //     {col2: 'Mileage'},
+                //     {col3: 'Tires'}, 
+                //     {col4: 'Steering'}, 
+                //     {col5: 'Electric condition'}, 
+                //     {col6: 'Fuel Type'}, 
+                //     {col7: 'Suspension'}, 
+                //     {col8: 'Interior'}, 
+                //     {col9: 'Transmission'}
+                // ],
 
+                rates: [
+                    {engine: 'Noises', body: 'Bonnet', mileage: '150,000KM+', tires:'Rotation', steering: 'Power Steering Fluid Level', electrical: 'Fog lights', fuelType: 'Battery powered', suspension: 'Shocks', interior: 'Roof Rear', transmission: 'Noises'},
+                    {engine: 'Leaks', body: 'Paint', mileage: '150,000-100,000KM', tires:'Balance', steering: 'Wear', electrical: 'Indicators Lights', fuelType: 'Petrol', suspension: 'Sway Bar', interior: 'Rear View Mirror', transmission: 'Leaks'},
+                    {engine: 'Corrosion', body: 'Trunk', mileage: '99,999-50,000KM', tires:'Wear', steering: 'Play', electrical: 'Hazard Lights', fuelType: 'Diesel', suspension: 'Looseness', interior: 'Visors', transmission: 'Transmission Housing'},
+                    {engine: 'Belts', body: 'Cowl Panel', mileage: '49,999-1KM', tires:'Alignment', steering: 'Shaft', electrical: 'Parking Lights', fuelType: 'Solar powered', suspension: 'Cracks', interior: 'Head Rests', transmission: 'Transfer Box'},
+                    {engine: 'Hoses', body: 'Fenders', mileage: '', tires:'', steering: 'Leaks', electrical: 'Reverse Lights', fuelType: '', suspension: 'Wear', interior: 'Seats', transmission: 'Propellor shaft'},
+                    {engine: 'Noises', body: 'Mirrors', mileage: '', tires:'', steering: 'Noises', electrical: 'Headlamps', fuelType: '', suspension: 'Ball Joints', interior: 'Door Handles', transmission: 'Diffferential'},
+                    {engine: 'Efficiency', body: 'Front Wind Shield', mileage: '', tires:'', steering: '', electrical: 'Interior Lights', fuelType: '', suspension: 'Noise', interior: 'Air Vents', transmission: 'Axels'},
+                    {engine: 'Gear power', body: 'Rear Wind Shield', mileage: '', tires:'', steering: '', electrical: 'Dashboard', fuelType: '', suspension: 'Play', interior: 'Dashboards', transmission: 'Pressure plates'},
+                    {engine: 'Engine knock', body: 'Front doors', mileage: '', tires:'', steering: '', electrical: 'Headlamps', fuelType: '', suspension: '', interior: 'Floor Carpet', transmission: 'Electronic Clutch'},
+                    {engine: 'Exhaust Gas Quality', body: 'Rear doors', mileage: '', tires:'', steering: '', electrical: 'Starter', fuelType: '', suspension: '', interior: '', transmission: 'Transaxle'},
 
-                }
+                ]
             }
         }
         
