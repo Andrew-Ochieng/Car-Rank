@@ -1,12 +1,16 @@
 <template>
   <div>
     <div
-      class="min-w-screen min-h-screen bg-gray-50 flex items-center justify-center px-5 py-5"
+      class="min-w-screen min-h-screen bg-gray-50 flex flex-col items-center justify-center p-2"
     >
+
+    <RatingGuide />
+
       <div
         class="bg-gray-50 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden"
         style="max-width: 1000px"
       >
+      
         <div class="md:flex w-full">
           <div class="w-full md:w-1/2 py-10 px-6 md:px-10">
             <div>
