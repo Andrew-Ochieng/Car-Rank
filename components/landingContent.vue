@@ -58,7 +58,7 @@
 const cars = ref([
   {
     id: "1",
-    pic: "https://cdn.pixabay.com/photo/2014/03/28/00/18/car-299772__340.jpg",
+    pic: "https://images.unsplash.com/photo-1629816816521-588e0c680056?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHBvcnNoZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     name: "Porshe",
   },
   {
@@ -69,12 +69,12 @@ const cars = ref([
   },
   {
     id: "3",
-    pic: "https://cdn.pixabay.com/photo/2014/09/07/22/34/car-race-438467__340.jpg   ",
+    pic: "https://images.unsplash.com/photo-1619362280286-f1f8fd5032ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGJtd3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     name: "BMW",
   },
   {
     id: "4",
-    pic:"https://cdn.pixabay.com/photo/2016/11/22/23/55/car-1851299__340.jpg",
+    pic:"https://images.unsplash.com/photo-1604054094723-3a949e4a8993?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cmFuZ2UlMjByb3ZlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     name: "Range Rover",
   },
   {
@@ -84,7 +84,7 @@ const cars = ref([
   },
   {
     id: "6",
-    pic:"https://cdn.pixabay.com/photo/2016/12/07/21/50/car-1890494__340.jpg",
+    pic:"https://cdn.pixabay.com/photo/2016/04/25/21/35/auto-1353257__340.jpg",
     name: "Bughatti",
   },
   {
@@ -94,7 +94,7 @@ const cars = ref([
   },
   {
     id: "8",
-    pic: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGNhcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    pic:"https://cdn.pixabay.com/photo/2018/12/10/01/31/car-3866119__340.jpg",
     name: "Lamborgini",
   },
 ]);
