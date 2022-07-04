@@ -1,5 +1,6 @@
 <template>
   <div>
+ 
     <div
       class="min-w-screen min-h-screen bg-gray-50 flex items-center justify-center px-5 py-5"
     >
@@ -31,7 +32,11 @@
                         class="w-full -ml-10 px-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500 bg-gray-50 text-gray-500"
                       >
                         <option disabled value="">Select car model</option>
-                        <option v-for="car in models" :key="car.id" :value="car.model_name">
+                        <option
+                          v-for="car in models"
+                          :key="car.id"
+                          :value="car.model_name"
+                        >
                           {{ car.model_name }}
                         </option>
                       </select>
@@ -74,9 +79,7 @@
                         v-model="car_location"
                         class="w-full -ml-10 px-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500 bg-gray-50 text-gray-500"
                       >
-                        <option disabled value="">
-                          Select  location
-                        </option>
+                        <option disabled value="">Select location</option>
                         <option
                           v-for="locale in locations"
                           :key="locale"
@@ -98,8 +101,7 @@
                         class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
                       ></div>
                       <input
-                        
-                       @change="onfileChange"
+                        @change="onfileChange"
                         type="file"
                         required
                         class="w-full -ml-10 px-4 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-blue-500"
@@ -205,7 +207,7 @@
                         max="10"
                         step="1"
                       />
-                      <p class="text-gray-500 text-sm ">{{car_engine}}</p>
+                      <p class="text-gray-500 text-sm">{{ car_engine }}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -231,7 +233,7 @@
                         max="3"
                         step="0.25"
                       />
-                      <p class="text-gray-500 text-sm ">{{car_milage}}</p>
+                      <p class="text-gray-500 text-sm">{{ car_milage }}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -257,7 +259,7 @@
                         max="5"
                         step="0.5"
                       />
-                      <p class="text-gray-500 text-sm ">{{car_body}}</p>
+                      <p class="text-gray-500 text-sm">{{ car_body }}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -284,7 +286,7 @@
                         max="3"
                         step="0.25"
                       />
-                      <p class="text-gray-500 text-sm ">{{car_tyre}}</p>
+                      <p class="text-gray-500 text-sm">{{ car_tyre }}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -311,7 +313,7 @@
                         max="5"
                         step="0.5"
                       />
-                      <p class="text-gray-500 text-sm ">{{car_steering}}</p>
+                      <p class="text-gray-500 text-sm">{{ car_steering }}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -338,7 +340,7 @@
                         max="3"
                         step="0.25"
                       />
-                      <p class="text-gray-500 text-sm ">{{car_fuel}}</p>
+                      <p class="text-gray-500 text-sm">{{ car_fuel }}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -365,7 +367,9 @@
                         max="5"
                         step="0.5"
                       />
-                      <p class="text-gray-500 text-sm ">{{car_transmission}}</p>
+                      <p class="text-gray-500 text-sm">
+                        {{ car_transmission }}
+                      </p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -392,7 +396,7 @@
                         max="5"
                         step="0.5"
                       />
-                      <p class="text-gray-500 text-sm ">{{car_electric}}</p>
+                      <p class="text-gray-500 text-sm">{{ car_electric }}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
@@ -419,13 +423,13 @@
                         max="3"
                         step="0.25"
                       />
-                      <p class="text-gray-500 text-sm ">{{car_accessories}}</p>
+                      <p class="text-gray-500 text-sm">{{ car_accessories }}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
                 </div>
                 <!-- !accessories -->
-                 <!-- !accessoriies -->
+                <!-- !accessoriies -->
                 <div class="flex -mx-3">
                   <div class="w-full px-3 flex">
                     <div class="pr-2">
@@ -446,7 +450,7 @@
                         max="5"
                         step="0.5"
                       />
-                      <p class="text-gray-500 text-sm">{{car_suspension}}</p>
+                      <p class="text-gray-500 text-sm">{{ car_suspension }}</p>
                     </div>
                     <p class="text-red-500 text-sm italic"></p>
                   </div>
@@ -473,13 +477,12 @@
                         max="3"
                         step="0.25"
                       />
-                      <p class="text-gray-500 text-sm">{{car_interior}}</p>
+                      <p class="text-gray-500 text-sm">{{ car_interior }}</p>
                     </div>
                     <p class="text-red-500 text-xs italic"></p>
                   </div>
                 </div>
                 <!-- !interior -->
-                
 
                 <div class="flex -mx-3">
                   <div class="w-full px-3 mb-5">
@@ -502,26 +505,27 @@
         </div>
       </div>
     </div>
+     <Ratings1/>
   </div>
 </template>
 
 <script setup>
-  import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
+import Ratings1 from "../components/ratings.vue";
 definePageMeta({
   layout: "admin",
 });
-const emits=defineEmits(["fileChange"])
+const emits = defineEmits(["fileChange"]);
 // testing file upload
 const fileUpload = ref(null);
-const onfileChange=async(e)=>{
-   var files=e.target.files || e.dataTransfer.files;
-   if(!files.length)return;
-   const {snapshot,downloadUrl,metadata} = await uploadFile(files[0]);
-   emits("fileChange",snapshot,downloadUrl,metadata);
-   console.log('download url from sell',downloadUrl)
-   fileUpload.value=downloadUrl
-
-}
+const onfileChange = async (e) => {
+  var files = e.target.files || e.dataTransfer.files;
+  if (!files.length) return;
+  const { snapshot, downloadUrl, metadata } = await uploadFile(files[0]);
+  emits("fileChange", snapshot, downloadUrl, metadata);
+  console.log("download url from sell", downloadUrl);
+  fileUpload.value = downloadUrl;
+};
 
 // file
 const car_model = ref("");
@@ -538,37 +542,78 @@ const car_body = ref(0);
 const car_electric = ref(0);
 const car_accessories = ref(0);
 const car_interior = ref(0);
-const car_suspension=ref(0);
-const final_price=ref(0)
-const car_owner=ref('')
-const car_contact=ref('')
+const car_suspension = ref(0);
+const final_price = ref(0);
+const car_owner = ref("");
+const car_contact = ref("");
 
-const total_rate=ref(0.0)
-const firebaseUser=useFirebaseUser()
-const router=useRouter()
+const total_rate = ref(0.0);
+const firebaseUser = useFirebaseUser();
+const router = useRouter();
 const handleSubmit = async () => {
+  if (
+    car_model.value &&
+    car_year.value &&
+    car_location.value &&
+    car_price.value &&
+    car_engine.value &&
+    car_milage.value &&
+    car_transmission.value &&
+    car_fuel.value &&
+    car_steering.value &&
+    car_tyre.value &&
+    car_body.value &&
+    car_electric.value &&
+    car_accessories.value &&
+    car_interior.value &&
+    fileUpload.value &&
+    car_suspension.value
+  ) {
+    total_rate.value =
+      parseFloat(car_engine.value) +
+      parseFloat(car_milage.value) +
+      parseFloat(car_transmission.value) +
+      parseFloat(car_fuel.value) +
+      parseFloat(car_steering.value) +
+      parseFloat(car_tyre.value) +
+      parseFloat(car_body.value) +
+      parseFloat(car_electric.value) +
+      parseFloat(car_accessories.value) +
+      parseFloat(car_interior.value);
+    console.log(total_rate.value);
+    final_price.value = (total_rate.value / 50) * car_price.value;
+    console.log("final price is ", final_price.value);
+    console.log("suspension", car_suspension.value);
 
-  
-  if(car_model.value && car_year.value && car_location.value && car_price.value && car_engine.value && car_milage.value && car_transmission.value && car_fuel.value && car_steering.value && car_tyre.value && car_body.value && car_electric.value && car_accessories.value && car_interior.value &&fileUpload.value && car_suspension.value){
-    
-    total_rate.value=(parseFloat(car_engine.value)+parseFloat(car_milage.value)+ parseFloat(car_transmission.value) + parseFloat(car_fuel.value) + parseFloat(car_steering.value) + parseFloat(car_tyre.value) + parseFloat(car_body.value) + parseFloat(car_electric.value) + parseFloat(car_accessories.value) + parseFloat(car_interior.value))
-    console.log(total_rate.value)
-    final_price.value=(total_rate.value/50)*car_price.value
-    console.log('final price is ',final_price.value)
-    console.log('suspension',car_suspension.value)
-
-    await addCar(firebaseUser.value.uid,car_model.value,car_year.value,car_location.value,car_price.value,car_engine.value,car_milage.value,car_transmission.value,car_fuel.value,car_steering.value,car_tyre.value,car_body.value,car_electric.value,car_accessories.value,car_interior.value,fileUpload.value,car_suspension.value,car_owner.value,car_contact.value);
-    router.push('/seller')
-    console.log('url inside the submit',fileUpload.value)
-  console.log(
-    `${car_model.value} ${car_year.value} ${car_location.value} ${car_price.value} ${car_engine.value} ${car_milage.value} ${car_transmission.value} ${car_fuel.value} ${car_steering.value} ${car_tyre.value} ${car_body.value} ${car_electric.value} ${car_accessories.value} ${car_interior.value}`
-  );
-  }else{
-    console.log('dont leave any field empty')
+    await addCar(
+      firebaseUser.value.uid,
+      car_model.value,
+      car_year.value,
+      car_location.value,
+      car_price.value,
+      car_engine.value,
+      car_milage.value,
+      car_transmission.value,
+      car_fuel.value,
+      car_steering.value,
+      car_tyre.value,
+      car_body.value,
+      car_electric.value,
+      car_accessories.value,
+      car_interior.value,
+      fileUpload.value,
+      car_suspension.value,
+      car_owner.value,
+      car_contact.value
+    );
+    router.push("/seller");
+    console.log("url inside the submit", fileUpload.value);
+    console.log(
+      `${car_model.value} ${car_year.value} ${car_location.value} ${car_price.value} ${car_engine.value} ${car_milage.value} ${car_transmission.value} ${car_fuel.value} ${car_steering.value} ${car_tyre.value} ${car_body.value} ${car_electric.value} ${car_accessories.value} ${car_interior.value}`
+    );
+  } else {
+    console.log("dont leave any field empty");
   }
-  
-
-  
 };
 const showNext = ref(false);
 const handleNext = () => {
@@ -589,21 +634,22 @@ const years = ref([
   "2011",
   "2010",
 ]);
+
 const models = ref([]);
-onMounted(async()=>{
-  const db=getFirestore();
+onMounted(async () => {
+  const db = getFirestore();
   const querySnapshot = await getDocs(collection(db, "models"));
-querySnapshot.forEach((doc) => {
-  models.value.push({...doc.data(),id:doc.id})
-  console.log(`${doc.id} => ${doc.data()}`);
+  querySnapshot.forEach((doc) => {
+    models.value.push({ ...doc.data(), id: doc.id });
+    console.log(`${doc.id} => ${doc.data()}`);
+  });
+  // find location
+  const locationSnapshot = await getDocs(collection(db, "locations"));
+  locationSnapshot.forEach((doc) => {
+    locations.value.push({ ...doc.data(), id: doc.id });
+    console.log(`${doc.id} => ${doc.data()}`);
+  });
 });
-// find location
-const locationSnapshot = await getDocs(collection(db, "locations"));
-locationSnapshot.forEach((doc) => {
-  locations.value.push({...doc.data(),id:doc.id})
-  console.log(`${doc.id} => ${doc.data()}`);
-});
-})
 </script>
 
 <style lang="scss" scoped></style>
