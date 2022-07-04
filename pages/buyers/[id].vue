@@ -43,6 +43,14 @@
                   <h5 class="text-gray-600 text-lg pr-16">Price:</h5>
                   <h5 class="text-blue-600 text-lg">Ksh.{{ final_price }}</h5>
                 </div>
+                 <div class="flex justify-center items-center">
+                  <button
+                    type="button"
+                    class="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-sm leading-tight uppercase rounded-lg shadow-md hover:bg-green-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+                  >
+                    Purchase
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -113,11 +121,8 @@ import {
   doc,
   getDoc,
   getFirestore,
-  query,
-  where,
-  collection,
+  
 } from "firebase/firestore";
-import { Skeletor } from "vue-skeletor";
 
 const route = useRoute();
 const car = ref(null);

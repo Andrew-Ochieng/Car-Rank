@@ -6,7 +6,7 @@
       <div class="p-5">
         <a href="#">
           <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
-            {{car.car_model}}
+            {{ car.car_model }}
           </h5>
         </a>
         <p class="mb-3 font-normal text-gray-700">
@@ -25,7 +25,9 @@
           </p>
         </div>
       </div>
+      
     </div>
+    
   </div>
 </template>
 
@@ -35,12 +37,23 @@ export default {
   setup(props) {
     const total_rate = ref(0.0);
     const final_price = ref(0.0);
-    total_rate.value= parseFloat(props.car.car_engine)+ parseFloat(props.car.car_milage)+parseFloat(props.car.car_transmission)+parseFloat(props.car.car_fuel)+parseFloat(props.car.car_steering)+parseFloat(props.car.car_tyre)+parseFloat(props.car.car_body)+parseFloat(props.car.car_electric)+parseFloat(props.car.car_accessories)+parseFloat(props.car.car_interior)
-    console.log(total_rate.value)
-  
-  final_price.value = ((total_rate.value / 50) * parseFloat(props.car.car_price)|0)
-  console.log(final_price.value)
-    return {final_price};
+    total_rate.value =
+      parseFloat(props.car.car_engine) +
+      parseFloat(props.car.car_milage) +
+      parseFloat(props.car.car_transmission) +
+      parseFloat(props.car.car_fuel) +
+      parseFloat(props.car.car_steering) +
+      parseFloat(props.car.car_tyre) +
+      parseFloat(props.car.car_body) +
+      parseFloat(props.car.car_electric) +
+      parseFloat(props.car.car_accessories) +
+      parseFloat(props.car.car_interior);
+    console.log(total_rate.value);
+
+    final_price.value =
+      ((total_rate.value / 50) * parseFloat(props.car.car_price)) | 0;
+    console.log(final_price.value);
+    return { final_price };
   },
 };
 </script>
